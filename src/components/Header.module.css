@@ -1,0 +1,134 @@
+.HeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(0, 28, 0);
+  padding: 20px 32px;
+  position: relative;
+}
+
+.HeaderContainer input {
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1rem;
+  width: 260px;
+}
+
+.HeaderContainer input::placeholder {
+  color: white;
+}
+
+.inputArea {
+  display: flex;
+  flex-direction: column;
+}
+
+.HeaderContainer div,
+h2 {
+  background: none;
+  color: white;
+  display: flex;
+  gap: 20px;
+}
+
+a {
+  background: none;
+  color: white;
+  text-decoration: none;
+}
+
+.counter {
+  position: absolute;
+  right: 22px;
+  bottom: 35px;
+  font-size: 0.7rem;
+  background: transparent;
+  color: white;
+}
+
+@media (max-width: 530px) {
+  .HeaderContainer {
+    display: none;
+  }
+}
+
+.showSidebar,
+.mainSideBar,
+.logo,
+.inputArea2 {
+  display: none;
+}
+
+@media (min-width: 330px) and (max-width: 530px) {
+  .showSidebar {
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 30px;
+    gap: 6px;
+    cursor: pointer;
+    background: transparent;
+  }
+  .logo {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 32px;
+    background: rgb(0, 23, 0);
+    align-items: center;
+  }
+  .showSidebar span {
+    color: white;
+    border: 2px solid white;
+    background: #000;
+    height: 2px;
+    width: 30px;
+  }
+  .inputArea2 {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    gap: 20px;
+    padding: 30px 15px 0;
+  }
+  .sideBar {
+    position: fixed;
+    right: 0%;
+    height: 100%;
+    width: 50%;
+    background: #000;
+    opacity: 0.3;
+  }
+  a {
+    color: #000;
+  }
+}
+
+.searchResults {
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  width: 300px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  left: 30%;
+  top: 100px;
+}
+
+.searchResults ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.searchResults li {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}

@@ -1,0 +1,98 @@
+.productContainer {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: white;
+}
+
+.productDetails {
+  display: flex;
+  gap: 40px;
+}
+
+.productImage img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.productInfo {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.productTitle {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.productDescription {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.productPricing {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.price {
+  font-size: 1.6rem;
+  color: #d9534f;
+  font-weight: bold;
+}
+
+.discount {
+  font-size: 1rem;
+  color: #5bc0de;
+  font-weight: bold;
+}
+
+.category,
+.brand {
+  font-size: 1rem;
+  color: #888;
+}
+
+.reviewsContainer {
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.reviewsContainer h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.reviewCard {
+  border-bottom: 1px solid #eaeaea;
+  padding: 10px 30px;
+}
+
+.reviewerName {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.reviewRating {
+  font-size: 1rem;
+  color: #f39c12;
+}
+
+.reviewComment {
+  font-size: 1rem;
+  color: #555;
+  font-style: italic;
+}
+
+.reviewCard:last-child {
+  border-bottom: none;
+}

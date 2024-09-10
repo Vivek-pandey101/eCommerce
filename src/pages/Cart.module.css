@@ -1,0 +1,50 @@
+.CartContainer {
+  color: white;
+  padding: 20px 32px;
+}
+
+li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.image {
+  height: 100px;
+  width: 100px;
+}
+
+.buyNow {
+  display: flex;
+  gap: 20px;
+}
+
+.cartbtns {
+  display: flex;
+  gap: 20px;
+  border: 1px solid white;
+  padding: 6px 10px;
+  height: fit-content;
+}
+
+.cartBtn {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.buy {
+  border: none;
+  background: rgb(3, 255, 3);
+  padding: 6px 10px;
+  color: black;
+  height: fit-content;
+  font-weight: 600;
+  box-shadow: 3px 3px red;
+  cursor: pointer;
+}

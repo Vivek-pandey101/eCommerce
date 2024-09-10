@@ -1,0 +1,10 @@
+.FooterContainer{
+    position: fixed;
+    bottom: 0;
+    color: white;
+    padding: 10px 32px;
+    background: rgb(115, 115, 254);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
