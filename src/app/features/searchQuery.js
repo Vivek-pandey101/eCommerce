@@ -8,7 +8,7 @@ export const STATUS = Object.freeze({
 
 const initialState = {
   searchData: {},
-  searchQuery: "", // Added searchQuery to track input globally
+  searchQuery: "",
   status: STATUS.IDLE,
 };
 
@@ -28,10 +28,10 @@ const searchProductSlice = createSlice({
   initialState,
   reducers: {
     setSearchQuery: (state, action) => {
-      state.searchQuery = action.payload; // Save search query globally
+      state.searchQuery = action.payload;
     },
     clearSearch: (state) => {
-      state.searchData = {}; // Clear search data on certain actions (like on page change)
+      state.searchData = {};
       state.searchQuery = "";
     },
   },

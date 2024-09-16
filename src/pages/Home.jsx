@@ -7,6 +7,7 @@ import Error from "../errorPage/Error";
 import { addProduct } from "../app/features/cartSlice";
 import { increment } from "../app/features/counterSlce";
 import { fetchProductDetails } from "../app/features/detailsSlice";
+import Carousel from "../components/Carousel";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const Home = () => {
   }, []);
 
   const showProductDetails = (id) => {
-    dispatch(fetchProductDetails(id))
+    dispatch(fetchProductDetails(id));
   };
 
   const { data: products, status } = useSelector((state) => state.product);
@@ -45,28 +46,31 @@ const Home = () => {
   };
 
   return (
-    <div className={styles.cardcontainer}>
-      {products.map((product) => (
-        <Link
-          to={`/details/${product.id}`}
-          onClick={() => showProductDetails(product.id)}
-          className={styles.card}
-          key={product.id}
-        >
-          <img src={product.thumbnail} alt={product.title} />
-          <div className={styles.cardcontent}>
-            <span className={styles.title}>{product.title}</span>
-            <p className={styles.price}>${product.price}</p>
-            <button
-              className={styles.addtocart}
-              onClick={() => handleClick(product)}
-            >
-              Add To Cart
-            </button>
-          </div>
-        </Link>
-      ))}
-    </div>
+    <>
+      <Carousel products={products} />
+      <div className={styles.cardcontainer}>
+        {products.map((product) => (
+          <Link
+            to={`/details/${product.id}`}
+            onClick={() => showProductDetails(product.id)}
+            className={styles.card}
+            key={product.id}
+          >
+            <img src={product.thumbnail} alt={product.title} />
+            <div className={styles.cardcontent}>
+              <span className={styles.title}>{product.title}</span>
+              <p className={styles.price}>${product.price}</p>
+              <button
+                className={styles.addtocart}
+                onClick={() => handleClick(product)}
+              >
+                Add To Cart
+              </button>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </>
   );
 };
 
