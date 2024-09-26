@@ -11,13 +11,13 @@ const ProductDetails = () => {
     category,
     brand,
     thumbnail,
-    reviews,
+    reviews = [],
     dimensions,
     stock,
     shippingInformation,
     availabilityStatus,
     returnPolicy,
-  } = useSelector((state) => state.details.productDetails);
+  } = useSelector((state) => state.details.productDetails || {});
 
   return (
     <div className={styles.productContainer}>
@@ -44,10 +44,16 @@ const ProductDetails = () => {
           <p>
             <strong>Shipping Info:</strong> {shippingInformation}
           </p>
-          <p>
-            <strong>Dimensions:</strong> {dimensions.width} x{" "}
-            {dimensions.height} x {dimensions.depth} cm
-          </p>
+          {dimensions ? (
+            <p>
+              <strong>Dimensions:</strong> {dimensions.width} x{" "}
+              {dimensions.height} x {dimensions.depth} cm
+            </p>
+          ) : (
+            <p>
+              <strong>Dimensions:</strong> Not available
+            </p>
+          )}
           <p>
             <strong>Return Policy:</strong> {returnPolicy}
           </p>
@@ -56,15 +62,19 @@ const ProductDetails = () => {
 
       <div className={styles.reviewsContainer}>
         <h2>Customer Reviews</h2>
-        {reviews.map((review, index) => (
-          <div key={index} className={styles.reviewCard}>
-            <p className={styles.reviewerName}>
-              <strong>{review.reviewerName}</strong>
-            </p>
-            <p className={styles.reviewRating}>Rating: {review.rating}/5</p>
-            <p className={styles.reviewComment}>"{review.comment}"</p>
-          </div>
-        ))}
+        {reviews.length > 0 ? (
+          reviews.map((review, index) => (
+            <div key={index} className={styles.reviewCard}>
+              <p className={styles.reviewerName}>
+                <strong>{review.reviewerName}</strong>
+              </p>
+              <p className={styles.reviewRating}>Rating: {review.rating}/5</p>
+              <p className={styles.reviewComment}>"{review.comment}"</p>
+            </div>
+          ))
+        ) : (
+          <p>No reviews available</p>
+        )}
       </div>
     </div>
   );

@@ -50,24 +50,25 @@ const Home = () => {
       <Carousel products={products} />
       <div className={styles.cardcontainer}>
         {products.map((product) => (
-          <Link
-            to={`/details/${product.id}`}
-            onClick={() => showProductDetails(product.id)}
-            className={styles.card}
-            key={product.id}
-          >
-            <img src={product.thumbnail} alt={product.title} />
-            <div className={styles.cardcontent}>
-              <span className={styles.title}>{product.title}</span>
-              <p className={styles.price}>${product.price}</p>
-              <button
-                className={styles.addtocart}
-                onClick={() => handleClick(product)}
-              >
-                Add To Cart
-              </button>
-            </div>
-          </Link>
+          <div key={product.id} className={styles.card}>
+            <Link
+              to={`/details/${product.id}`}
+              onClick={() => showProductDetails(product.id)}
+              className={styles.cardLink}
+            >
+              <img src={product.thumbnail} alt={product.title} />
+              <div className={styles.cardcontent}>
+                <span className={styles.title}>{product.title}</span>
+                <p className={styles.price}>${product.price}</p>
+              </div>
+            </Link>
+            <button
+              className={styles.addtocart}
+              onClick={() => handleClick(product)}
+            >
+              Add To Cart
+            </button>
+          </div>
         ))}
       </div>
     </>

@@ -11,6 +11,7 @@ import { fetchProductDetails } from "../app/features/detailsSlice";
 
 const Header = () => {
   const [show, setShow] = useState(false);
+  const count = useSelector((state) => state.counter.count);
   const input = useSelector((state) => state.search.searchQuery); // Use global search query
   const products = useSelector((state) => state.search.searchData);
   const dispatch = useDispatch();
@@ -64,7 +65,7 @@ const Header = () => {
           </div>
         )}
         <Link to="/cart">
-          Cart <span className={styles.counter}>0</span>
+          Cart <span className={styles.counter}>{count}</span>
         </Link>
       </div>
       <div className={styles.logo}>
@@ -88,7 +89,7 @@ const Header = () => {
               Home
             </Link>
             <Link onClick={() => setShow(!show)} to="/cart">
-              Cart <span className={styles.counter}>0</span>
+              Cart <span className={styles.counter}>{count}</span>
             </Link>
           </div>
           <div className={styles.sideBar} onClick={() => setShow(!show)}></div>

@@ -50,7 +50,6 @@
   color: #333;
 }
 
-
 @media (max-width: 768px) {
   .cardcontent p {
     font-size: 0.9rem;
@@ -65,11 +64,10 @@
   padding: 6px 10px;
   font-size: 1rem;
   font-weight: 550;
-  width: fit-content;
   opacity: 0;
 }
 
-.addtocart:hover{
+.addtocart:hover {
   background: rgb(155, 155, 245);
   opacity: 1;
 }
