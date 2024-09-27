@@ -64,6 +64,7 @@ const Header = () => {
             </ul>
           </div>
         )}
+        <Link to="/orders">Orders</Link>
         <Link to="/cart">
           Cart <span className={styles.counter}>{count}</span>
         </Link>
@@ -90,6 +91,9 @@ const Header = () => {
             </Link>
             <Link onClick={() => setShow(!show)} to="/cart">
               Cart <span className={styles.counter}>{count}</span>
+            </Link>
+            <Link onClick={() => setShow(!show)} to="/orders">
+              Orders
             </Link>
           </div>
           <div className={styles.sideBar} onClick={() => setShow(!show)}></div>

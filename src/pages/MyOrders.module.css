@@ -1,0 +1,11 @@
+.OrdersContiner{
+    width: 80%;
+    min-height: 100vh;
+    color: white;
+    margin: 30px auto;
+}
+
+.OneItem{
+    display: flex;
+    align-items: center;
+}

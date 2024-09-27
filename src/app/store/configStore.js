@@ -4,6 +4,7 @@ import addProduct from "../features/cartSlice";
 import countProduct from "../features/counterSlce";
 import searchProduct from "../features/searchQuery";
 import productDetails from "../features/detailsSlice";
+import orderDetails from "../features/orderStore";
 
 export const store = configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
     counter: countProduct,
     search: searchProduct,
     details: productDetails,
+    orders: orderDetails,
   },
 });

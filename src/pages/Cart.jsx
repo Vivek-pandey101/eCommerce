@@ -3,6 +3,7 @@ import styles from "./Cart.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { decrement } from "../app/features/counterSlce";
 import { removeProduct } from "../app/features/cartSlice";
+import { addProductToStore } from "../app/features/orderStore";
 
 const Cart = () => {
   const cartProduct = useSelector((state) => state.cartProduct.cartItem);
@@ -12,6 +13,12 @@ const Cart = () => {
   const handleRemove = (id) => {
     dispatch(removeProduct(id));
     dispatch(decrement());
+  };
+
+  const handleOrder = (item) => {
+    dispatch(addProductToStore(item));
+    console.log("Order Placed");
+    
   };
 
   return (
@@ -35,11 +42,16 @@ const Cart = () => {
                   <p>{item.title}</p>
                 </div>
                 <div className={styles.buyNow}>
-                  <button className={styles.buy}>Buy Now</button>
+                  <button
+                    className={styles.buy}
+                    onClick={() => handleOrder(item)}
+                  >
+                    Buy Now
+                  </button>
                   <abbr title="Remove From Cart">
                     <button
                       className={styles.buy}
-                      onClick={()=>handleRemove(item.id)}
+                      onClick={() => handleRemove(item.id)}
                     >
                       X
                     </button>
